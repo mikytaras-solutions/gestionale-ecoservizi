@@ -16,11 +16,15 @@ from src.services.dipendenti_service import import_from_excel, count
 def show_splash():
     """Mostra la schermata iniziale con logo e accesso."""
     
-    # Inizializza DB
+      # Inizializza DB
     crea_tabelle()
     crea_tabelle_magazzino()
+    
+    # Forza import su Streamlit Cloud
+    from src.services.dipendenti_service import import_from_excel, count
     if count() == 0:
-        import_from_excel()
+        importati = import_from_excel()
+        st.write(f"Debug: importati {importati} dipendenti")
     
     # Layout a due colonne
     col_logo, col_welcome = st.columns([1, 1])
