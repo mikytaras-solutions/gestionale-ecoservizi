@@ -33,7 +33,10 @@ DB_NAME = os.path.join(DATABASE_DIR, "db_ecoservizi.db")
 #                   FILE EXCEL
 # ============================================================
 
-EXCEL_ORIGINE = os.path.join(EXCEL_DIR, "Dipendenti_3.xlsx")
+# Prova prima il percorso relativo (funziona su Streamlit Cloud)
+EXCEL_ORIGINE = os.path.join("Data", "excel", "Dipendenti_3.xlsx")
+if not os.path.exists(EXCEL_ORIGINE):
+    EXCEL_ORIGINE = os.path.join(EXCEL_DIR, "Dipendenti_3.xlsx")
 
 # ============================================================
 #                   LOGO
