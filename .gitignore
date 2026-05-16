@@ -1,0 +1,16 @@
+# Database (non caricare dati reali)
+data/database/*.db
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# File temporanei
+*.pyo
+*.log
+
+# Cartella foto e documenti (dati sensibili)
+data/Foto/*
+cartaidentita/*
+!data/Foto/.gitkeep
+!cartaidentita/.gitkeep
